@@ -17,7 +17,7 @@ rule.hour = 16;
 nodeSchedule.scheduleJob(rule, function(){
 	MongoClient.connect("mongodb://admin:admin123@ds157493.mlab.com:57493/microservice", {useNewUrlParser: true } )
         .then(client => {
-            client.db(microservice).collection("log").insertOne({
+            client.db("microservice").collection("log").insertOne({
 				job: "schedule rule",
 				at: new Date()
 			});
